@@ -6,6 +6,8 @@ import java.util.Locale;
 
 @ConfigurationProperties
 public class YamlProps {
+
+    private static final String FILE_PREFIX = "questions";
     private String locale;
 
     public Locale getLocale() {
@@ -14,5 +16,9 @@ public class YamlProps {
 
     public void setLocale(String locale) {
         this.locale = locale;
+    }
+
+    public String getQuizQuestionsFileName(){
+        return FILE_PREFIX + "_" + locale.toString() + ".csv";
     }
 }
